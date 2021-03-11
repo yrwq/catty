@@ -5,8 +5,8 @@ pub fn highlight(to_hl: &str) {
     let mut highlight = Highlighter::new();
 
     // Keywords
-    highlight.join(&["void", "return", "struct"], "keyword").unwrap();
-    highlight.join(&["bool", "int", "char"], "type").unwrap();
+    highlight.join(&["void", "return", "#include"], "keyword").unwrap();
+    highlight.join(&["bool", "int", "char", "double", "float", "struct"], "type").unwrap();
     highlight.join(&["true", "false"], "boolean").unwrap();
 
     // Comments

@@ -10,6 +10,8 @@ pub fn highlight(to_hl: &str) {
     highlight.join(&["bool"], "type").unwrap();
     highlight.join(&["true", "false"], "boolean").unwrap();
 
+    highlight.join(&["if", "else if", "else"], "statement").unwrap();
+
     // Comments
     highlight.add(r"(?m)(//.*)$", "comment").unwrap();
     highlight.add(r"(?ms)/\*.*?\*/", "comment").unwrap();
@@ -42,6 +44,7 @@ pub fn highlight(to_hl: &str) {
                     "type" => print!("{}", color::Fg(color::LightMagenta)),
                     "boolean" => print!("{}", color::Fg(color::LightGreen)),
                     "identifier" => print!("{}", color::Fg(color::Yellow)),
+                    "statement" => print!("{}", color::Fg(color::Red)),
                     "macro" => print!("{}", color::Fg(color::Magenta)),
                     _ => (),
                 }
