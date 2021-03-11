@@ -7,6 +7,7 @@ use termion::color;
 // Langs
 mod c;
 mod rs;
+mod default;
 
 fn main() {
     // Colorize text
@@ -39,6 +40,8 @@ fn main() {
                 rs::highlight(&content);
             } else if filename.ends_with(".c") {
                 c::highlight(&content);
+            } else {
+                default::highlight(&content);
             }
 
             // The file is automatically closed when it goes out of scope.
