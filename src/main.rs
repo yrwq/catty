@@ -5,9 +5,7 @@ use std::io::Read;
 use termion::color;
 
 // Langs
-mod c;
-mod rs;
-mod default;
+mod langs;
 
 fn main() {
     // Colorize text
@@ -37,11 +35,11 @@ fn main() {
 
             // Detect file type by looking for the suffix
             if filename.ends_with(".rs") {
-                rs::highlight(&content);
+                langs::rs::highlight(&content);
             } else if filename.ends_with(".c") {
-                c::highlight(&content);
+                langs::c::highlight(&content);
             } else {
-                default::highlight(&content);
+                langs::default::highlight(&content);
             }
 
             // The file is automatically closed when it goes out of scope.

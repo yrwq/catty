@@ -5,5 +5,5 @@ authors = ["yrwq <yrwqid@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-synoptic = "*"
+synoptic = "0"
 termion = "1.5.6"
