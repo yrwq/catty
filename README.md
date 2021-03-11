@@ -1,5 +1,5 @@
 ## Catty
 
-| Catty is not a cat replacement, tho.
+> Catty is not a cat replacement, tho.
 
-> Usage `catty <file>` done.
+Usage `catty <file>` done.
