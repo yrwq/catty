@@ -30,8 +30,10 @@ fn main() {
         Ok(mut file) => {
 
             let mut content = String::new();
+
             // Read file content to a string
-            file.read_to_string(&mut content).unwrap();
+            file.read_to_string(&mut content)
+                .unwrap();
 
             // Detect file type by looking for the suffix
             if filename.ends_with(".rs") {
@@ -47,7 +49,8 @@ fn main() {
 
         // Error handling.
         Err(err) => {
-            print!("\nCan't open {}{}{} | {}\n\n", fg_lred, filename, fg_reset, err);
+            print!("\nCan't open {}{}{} | {}\n\n",
+                fg_lred, filename, fg_reset, err);
         },
     }
 }
